@@ -632,6 +632,8 @@ func StartServer(localPort int, serverAddr string, serverPort int, token string,
 		common.Complete()
 		common.ServerAddr = serverAddr
 		common.ServerPort = serverPort
+		exitOnLoginFail := false
+		common.LoginFailExit = &exitOnLoginFail
 		if token != "" {
 			common.Auth.Method = v1.AuthMethodToken
 			common.Auth.Token = token
